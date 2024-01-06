@@ -4,13 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npx hardhat run scripts/deployProxy.js --network goerli",
+    "upgrade": "npx hardhat run scripts/upgradeProxy.js --network goerli",
+    "verify": "npx hardhat verify --network goerli vendingMachine_CONTRACT_ADDRESS" 
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts-upgradeable": "^5.0.1",
+    "@openzeppelin/hardhat-upgrades": "^3.0.1",
     "hardhat": "^2.19.4"
   },
   "dependencies": {
